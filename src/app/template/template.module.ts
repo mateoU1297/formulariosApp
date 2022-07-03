@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { TemplateRoutingModule } from './template-routing.module';
 
@@ -15,6 +16,7 @@ import { SwitchesComponent } from './switches/switches.component';
   ],
   imports: [
     CommonModule,
+    FormsModule,
     TemplateRoutingModule
   ]
 })
