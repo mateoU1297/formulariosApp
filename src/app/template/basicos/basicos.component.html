@@ -36,6 +36,12 @@
                         ngModel
                         required
                     >
+                    <span 
+                        class="form-text text-danger"
+                        *ngIf="validarPrecio()"
+                    >
+                        El precio debe ser 0 o mayor
+                    </span>
                 </div>
             </div>
 
@@ -48,6 +54,9 @@
                         placeholder="Existencias del producto"
                         name="existencias"
                         ngModel
+                        customMin
+                        [minimo]="0"
+                        required
                     >
                 </div>
             </div>
@@ -57,6 +66,7 @@
                     <button
                         type="submit"
                         class="btn btn-primary float-end"
+                        [disabled]="miFormulario.invalid"
                     >
                         Guardar
                     </button>
