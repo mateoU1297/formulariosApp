@@ -1,7 +1,7 @@
 <h2>Reactivos: Switches</h2>
 <hr>
 
-<form>
+<form [formGroup]="miFormulario" (ngSubmit)="guardar()">
     <div class="mb-3 row">
         <label class="col-sm-3 col-form-label">Género</label>
         <div class="col-sm-9">
@@ -9,8 +9,8 @@
                 <input 
                     class="form-check-input" 
                     type="radio" 
-                    name="radioGenero"
                     value="M"
+                    formControlName="genero"
                     id="radioMasculino"
                 >
                 <label class="form-check-label" for="radioMasculino">
@@ -22,8 +22,8 @@
                 <input 
                     class="form-check-input" 
                     type="radio" 
-                    name="radioGenero"
                     value="F"
+                    formControlName="genero"
                     id="radioFemenino"
                 >
                 <label class="form-check-label" for="radioFemenino">
@@ -40,6 +40,7 @@
                 <input 
                     class="form-check-input" 
                     type="checkbox" 
+                    formControlName="notificaciones"
                     id="radioMasculino"
                 >
                 <label class="form-check-label" for="notificaciones">
@@ -69,7 +70,7 @@
         <div class="col">
             <button 
                 class="btn btn-primary float-end" 
-                type="button"
+                type="submit"
             >
                 Guardar
             </button>
